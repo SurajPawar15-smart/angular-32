@@ -56,13 +56,48 @@ Date: 5/12/2025 DataBinding
 https://us06web.zoom.us/rec/share/vm0efItJWBkUKDZaQwHmm3k3Ey5zp1E-VZNi6xSSUWLMbyXqRRH4xrTp_YDON5wm.HcCVfTHfGsq3AK5v 
 Passcode: &Bp?b4UF
 
+Date: 5/12/2025 Interview
+https://us06web.zoom.us/rec/share/HRfdzA1jSjkN4mT6TI9AvGhRui6N1hFo9Ejt1EWZvcH1EB2WrrgxVnmMVdk8XFs.8nYM2Kum3rQdYN0b 
+Passcode: *bE=10Z4
 
 
+==========================================
+Angular-Batch-Notes
+==========================================
+PS F:\Angular\angular-32\src\app\components> ng g c admin
+CREATE src/app/components/admin/admin.spec.ts (547 bytes)
+CREATE src/app/components/admin/admin.ts (193 bytes)
+CREATE src/app/components/admin/admin.css (0 bytes)
+CREATE src/app/components/admin/admin.html (21 bytes)
+PS F:\Angular\angular-32\src\app\components> ng g c user
+CREATE src/app/components/user/user.spec.ts (540 bytes)
+CREATE src/app/components/user/user.ts (189 bytes)
+CREATE src/app/components/user/user.css (0 bytes)
+CREATE src/app/components/user/user.html (20 bytes)
+PS F:\Angular\angular-32\src\app\components> 
 
+user.html
+<p>User works!</p>
 
+<label for="fname">First Name:</label>
+<input type="text" name="firstname" id="fname">
 
+<br><br>
 
+<label for="language">Select Language:</label>
+<select name="language" id="language">
+    <option value="java">JAVA</option>
+    <option value="python">Python</option>
+    <option value="ruby">Ruby</option>
+    <option value="nodejs">NodeJS</option>
+</select>
 
+admin.html
+<p>Admin works!</p>
+
+<h1>Admin Page</h1>
+
+<button>Save</button>
 
 
 
