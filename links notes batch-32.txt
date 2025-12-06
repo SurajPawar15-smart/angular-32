@@ -1,6 +1,14 @@
 ==========================================
 JavaScript Batch-32
 ==========================================
+Date: 17/11/2025 index.js
+https://us06web.zoom.us/rec/share/602bjUa96k724YlmXBxe9rLyRqyjfMHb6UVCjYVKdznW2Dn8SCHWZTle5O7dxane.heFNNj1kknYJDOHv
+Passcode: t*4!U*ZJ
+
+Date: 18/11/2025 variables and operators
+https://us06web.zoom.us/rec/share/D2oKJMCaLk1SrNLpJahw3cEa0spBdoDbq_vuRRFpjI8BVT58ln7zsbKBMEm-2tGz.PhWKVccCbZS5BHB0
+Passcode: 9h*s&FlG
+
 Date: 19/11/2025 operators.js
 https://us06web.zoom.us/rec/share/AziVKNOi9kqjise0TroJKIqwgc-2FRd_8NWv2hJfnj7Sb5TSAVVpv9m6c9P5KklZ.TUi34pb6ZvHce0we 
 Passcode: l74UATM^
@@ -56,10 +64,9 @@ Date: 5/12/2025 DataBinding
 https://us06web.zoom.us/rec/share/vm0efItJWBkUKDZaQwHmm3k3Ey5zp1E-VZNi6xSSUWLMbyXqRRH4xrTp_YDON5wm.HcCVfTHfGsq3AK5v 
 Passcode: &Bp?b4UF
 
-Date: 5/12/2025 Interview
+Date: 5/12/2025 Interview questions
 https://us06web.zoom.us/rec/share/HRfdzA1jSjkN4mT6TI9AvGhRui6N1hFo9Ejt1EWZvcH1EB2WrrgxVnmMVdk8XFs.8nYM2Kum3rQdYN0b 
 Passcode: *bE=10Z4
-
 
 ==========================================
 Angular-Batch-Notes
@@ -249,8 +256,119 @@ angular.json
 
 ng g --port 4203
 
+data-binding.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-data-binding',
+  imports: [],
+  templateUrl: './data-binding.html',
+  styleUrl: './data-binding.css',
+})
+export class DataBinding {
+  course = 'angular';
+  courseDuration = '3 Months';
+  startDate = '21 Dec 2025';
+  productName = 'Mobile Moto';
+  myPlaceholderText = 'Enter Price';
+  inputType = 'date';
+  dangerclassName = 'bg-danger';
+  courseName: string = 'Java';
+  constructor() {
+    const player = 'Sachine';
+    console.log(this.courseDuration);
 
+    setTimeout(() => {
+      this.course = 'ReactJS'; // Angular 17/18/19/20 zoneless ready
+      debugger;
+    }, 3000);
+  }
 
+  showWelcome() {
+    alert('welcome b-32');
+    alert('End Alert');
+  }
+  changeCourse() {
+    this.course = 'Dot Net';
+  }
+  onCitychange() {
+    alert('City got changed...!!!');
+  }
+  setCourseName(courseName: any) {
+    this.course = courseName;
+  }
+}
+
+data-binding.html
+<div class="row">
+    <div class="col-3">
+        Course => <span>{{ course }}</span>
+    </div>
+
+    <div class="col-3">
+        {{ courseDuration }}
+    </div>
+
+    <div class="col-3">
+        <h1>{{ startDate }}</h1>
+    </div>
+
+    <div class="col-3">
+        <label for="courseDuration">Course Duration</label>
+        <input id="courseDuration" type="text" [value]="courseDuration">
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-3">
+        <input type="text" placeholder="Enter product name" minlength="3"
+            [value]="productName">
+    </div>
+
+    <div class="col-3">
+        <label for="priceInput">Price</label>
+        <input id="priceInput" type="text" [placeholder]="myPlaceholderText">
+    </div>
+
+    <div class="col-3">
+        <label for="dynamicInput">Select Option</label>
+        <input id="dynamicInput" [type]="inputType">
+    </div>
+
+    <div [class]="dangerClassName ">
+        <label for="textInput">Enter Text</label>
+        <input id="textInput" type="text">
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcome()">Show</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="changeCourse()">Change
+            Course</button>
+    </div>
+    <div class="col-3">
+        <label for="techSelect">Select Technology</label>
+        <select id="techSelect" (change)="onCitychange()">
+            <option value="html5">HTML5</option>
+            <option value="css3">CSS3</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="setCourseName('Dot Net')">Dot
+            Net</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Java')">Java</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Php')">Php</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Python')">Python</button>
+        <button class="btn btn-success" (click)="setCourseName('NodeJS')">Dot
+            Net</button>
+    </div>
+</div>
 
 
 
