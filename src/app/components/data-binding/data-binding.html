@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-3">
+        Course => <span>{{ course }}</span>
+    </div>
+
+    <div class="col-3">
+        {{ courseDuration }}
+    </div>
+
+    <div class="col-3">
+        <h1>{{ startDate }}</h1>
+    </div>
+
+    <div class="col-3">
+        <label for="courseDuration">Course Duration</label>
+        <input id="courseDuration" type="text" [value]="courseDuration">
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-3">
+        <input type="text" placeholder="Enter product name" minlength="3"
+            [value]="productName">
+    </div>
+
+    <div class="col-3">
+        <label for="priceInput">Price</label>
+        <input id="priceInput" type="text" [placeholder]="myPlaceholderText">
+    </div>
+
+    <div class="col-3">
+        <label for="dynamicInput">Select Option</label>
+        <input id="dynamicInput" [type]="inputType">
+    </div>
+
+    <div [class]="dangerClassName ">
+        <label for="textInput">Enter Text</label>
+        <input id="textInput" type="text">
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcome()">Show</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="changeCourse()">Change
+            Course</button>
+    </div>
+    <div class="col-3">
+        <label for="techSelect">Select Technology</label>
+        <select id="techSelect" (change)="onCitychange()">
+            <option value="html5">HTML5</option>
+            <option value="css3">CSS3</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="setCourseName('Dot Net')">Dot
+            Net</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Java')">Java</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Php')">Php</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Python')">Python</button>
+        <button class="btn btn-success" (click)="setCourseName('NodeJS')">Dot
+            Net</button>
+    </div>
+</div>

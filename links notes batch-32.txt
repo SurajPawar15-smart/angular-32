@@ -238,6 +238,25 @@ export class DataTypes {
   }
 }
 
+====================================================
+day-03 DataBinding
+====================================================
+ng g c databinding
+npm install bootstrap
+
+angular.json
+ "styles": ["./node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]
+
+ng g --port 4203
+
+
+
+
+
+
+
+
+
 
 
 
