@@ -1,10 +1,10 @@
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ng-class-ex',
-  imports: [NgClass, FormsModule, NgFor],
+  imports: [NgClass, FormsModule, NgFor, NgStyle],
   templateUrl: './ng-class-ex.html',
   styleUrl: './ng-class-ex.css',
 })

@@ -1,4 +1,4 @@
-<h1>This is my Angular Dashboard</h1>
+<!-- <h1>This is my Angular Dashboard</h1> -->
 
 <!-- <table class="dashboard-table">
   <tr>
@@ -10,5 +10,37 @@
 <!-- <app-data-binding></app-data-binding> -->
 <!-- <app-ng-if-ex></app-ng-if-ex> -->
 <!-- <app-ng-for-ex></app-ng-for-ex> -->
-<app-ng-class-ex />
+<!-- <app-ng-class-ex /> -->
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="databinding">Data Binding</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="data-types">Data Type</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'ng-class-ex'">NgClass</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="ng-for-ex">NgFor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ng-if-ex">NgIf</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="app-basic-signal">Basic-Signal</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>

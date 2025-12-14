@@ -64,35 +64,35 @@
             </tbody>
         </table>
     </div>
-    <div class="col-4">
-        <div class="card" style="width: 22rem;">
-            <div class="card-header bg-primary text-white">
-                Employee Details
-            </div>
+</div>
 
-            <div class="card-body">
-                <h5 class="card-title">{{ employeeDetails.name }}</h5>
-                <p class="card-text">
-                    <strong>ID:</strong> {{ employeeDetails.empId }} <br />
-                    <strong>Designation:</strong> {{ employeeDetails.designation
-                    }} <br />
-                    <strong>Department:</strong> {{ employeeDetails.department
-                    }} <br />
-                    <strong>Email:</strong> {{ employeeDetails.email }} <br />
-                    <strong>Mobile:</strong> {{ employeeDetails.mobile }} <br />
-                    <strong>City:</strong> {{ employeeDetails.city }}
-                </p>
-
-                <span [class.text-success]="employeeDetails.isActive"
-                    [class.text-danger]="!employeeDetails.isActive">
-                    {{ employeeDetails.isActive ? 'Active' : 'Inactive' }}
-                </span>
-            </div>
-
-            <div class="card-footer text-muted text-end">
-                Updated just now
-            </div>
+<div class="col-4">
+    <div class="card" style="width: 22rem;">
+        <div class="card-header bg-primary text-white">
+            Employee Details
         </div>
 
+        <div class="card-body">
+            <h5 class="card-title">{{ employeeDetails.name }}</h5>
+            <p class="card-text">
+                <strong>ID:</strong> {{ employeeDetails.empId }} <br />
+                <strong>Designation:</strong> {{ employeeDetails.designation
+                }} <br />
+                <strong>Department:</strong> {{ employeeDetails.department
+                }} <br />
+                <strong>Email:</strong> {{ employeeDetails.email }} <br />
+                <strong>Mobile:</strong> {{ employeeDetails.mobile }} <br />
+                <strong>City:</strong> {{ employeeDetails.city }}
+            </p>
+
+            <span [class.text-success]="employeeDetails.isActive"
+                [class.text-danger]="!employeeDetails.isActive">
+                {{ employeeDetails.isActive ? 'Active' : 'Inactive' }}
+            </span>
+        </div>
+
+        <div class="card-footer text-muted text-end">
+            Updated just now
+        </div>
     </div>
 </div>

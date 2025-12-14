@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 // import { Admin } from './components/admin/admin';
 // import { User } from './components/user/user';
 //import { DataTypes } from './components/data-types/data-types';
@@ -10,7 +10,7 @@ import { NgClassEx } from './components/ng-class-ex/ng-class-ex';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgClassEx],
+  imports: [RouterOutlet, NgClassEx, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

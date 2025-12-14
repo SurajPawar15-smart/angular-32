@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-data-types',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './data-types.html',
   styleUrl: './data-types.css',
 })
