@@ -99,40 +99,42 @@
     </div>
 </div>
 <hr>
-<div class="row">
-    <div class="col-3">
-        <input
-            type="text"
-            [(ngModel)]="enteredMarks"
-            name="marks"
-            id="marks"
-            min="0"
-            max="100"
-            placeholder="Enter marks out of 100"
-            class="form-control" />
-    </div>
+<!-- <div class="row">
+    <div class="row">
+        <div class="col-3">
+            <input
+                type="number"
+                [(ngModel)]="enteredMarks"
+                name="marks"
+                id="marks"
+                min="0"
+                max="100"
+                placeholder="Enter marks out of 100"
+                class="form-control" />
+        </div>
 
-    <div class="col-3">
-        @if (enteredMarks === null) {
-        <span class="text-muted">Please enter marks</span>
-        }
-        @else if (enteredMarks > 35) {
-        <span class="text-danger">Student Failed</span>
-        }
-        @else if (enteredMarks > 50) {
-        <span class="text-secondary">Student has C Grade</span>
-        }
-        @else if (enteredMarks > 65) {
-        <span class="text-success">Student has B Grade</span>
-        }
-        @else if (enteredMarks > 80) {
-        <span class="text-primary">Student has A Grade</span>
-        }
-        @else if (enteredMarks >= 95) {
-        <span class="text-warning">Student has A+ Grade</span>
-        }
-        @else {
-        <span class="text-danger">Invalid marks</span>
-        }
+        <div class="col-3">
+            @if (enteredMarks === null) {
+            <span class="text-muted">Please enter marks</span>
+            }
+            @else if (enteredMarks < 35) {
+            <span class="text-danger">Student Failed</span>
+            }
+            @else if (enteredMarks < 50) {
+            <span class="text-secondary">Student has C Grade</span>
+            }
+            @else if (enteredMarks < 65) {
+            <span class="text-success">Student has B Grade</span>
+            }
+            @else if (enteredMarks < 80) {
+            <span class="text-primary">Student has A Grade</span>
+            }
+            @else if (enteredMarks <= 100) {
+            <span class="text-warning">Student has A+ Grade</span>
+            }
+            @else {
+            <span class="text-danger">Invalid marks</span>
+            }
+        </div>
     </div>
-</div>
+</div> -->

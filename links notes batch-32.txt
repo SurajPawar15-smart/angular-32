@@ -946,10 +946,135 @@ day-05 directive *ngFor and @for
 ng g c ngForEx
 
 
+import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 
+@Component({
+  selector: 'app-ng-for-ex',
+  imports: [NgFor],
+  templateUrl: './ng-for-ex.html',
+  styleUrl: './ng-for-ex.css',
+})
+export class NgForEx {
+  cityList: string[] = ['pune', 'mumbai', 'chennai', 'nagpur', 'goa'];
+  rollNoList: number[] = [100, 110, 120, 130, 140, 150];
 
+  studentList: any[] = [
+    { name: 'Suraj Pawar', city: 'Pune', isActive: true },
+    { name: 'Amit Kulkarni', city: 'Nagpur', isActive: false },
+    { name: 'Priya Sharma', city: 'Mumbai', isActive: true },
+    { name: 'Rahul Patil', city: 'Kolhapur', isActive: true },
+    { name: 'Neha Verma', city: 'Nashik', isActive: false },
+  ];
 
+  employeeDetails: any = {
+    empId: 'EMP101',
+    name: 'Suraj Pawar',
+    designation: 'Angular Developer',
+    department: 'IT',
+    email: 'suraj.pawar@example.com',
+    mobile: '9876543210',
+    city: 'Pune',
+    isActive: true,
+  };
+}
 
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let item of cityList">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-2">
+        <div>
+            <button *ngFor="let roll of rollNoList">{{roll}}
+            </button>
+        </div>
+    </div>
+    <div class="col-2">
+        <input *ngFor="let roll of rollNoList" [value]="roll" type="text"
+            placeholder="roll">
+    </div>
+    <div class="col-2">
+        <label for="city">City Name</label>
+        <select *ngFor="let city of cityList " id="city">
+            <option value>{{city}}</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <label for="city">City Name</label>
+        <select *ngFor="let city of cityList " id="city">
+            <option *ngFor="let cityName of cityList"
+                value>{{cityName}}</option>
+        </select>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Name</td>
+                    <td>City</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of studentList;let srNo =index">
+                    <td>{{srNo+1}}</td>
+                    <td>{{stud.name}}</td>
+                    <td>{{stud['city']}}</td>
+                    <td>
+                        <span [class.text-success]="stud.isActive"
+                            [class.text-danger]="!stud.isActive">
+                            {{ stud.isActive ? 'Active' : 'Inactive' }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <div class="card" style="width: 22rem;">
+            <div class="card-header bg-primary text-white">
+                Employee Details
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">{{ employeeDetails.name }}</h5>
+                <p class="card-text">
+                    <strong>ID:</strong> {{ employeeDetails.empId }} <br />
+                    <strong>Designation:</strong> {{ employeeDetails.designation
+                    }} <br />
+                    <strong>Department:</strong> {{ employeeDetails.department
+                    }} <br />
+                    <strong>Email:</strong> {{ employeeDetails.email }} <br />
+                    <strong>Mobile:</strong> {{ employeeDetails.mobile }} <br />
+                    <strong>City:</strong> {{ employeeDetails.city }}
+                </p>
+
+                <span [class.text-success]="employeeDetails.isActive"
+                    [class.text-danger]="!employeeDetails.isActive">
+                    {{ employeeDetails.isActive ? 'Active' : 'Inactive' }}
+                </span>
+            </div>
+
+            <div class="card-footer text-muted text-end">
+                Updated just now
+            </div>
+        </div>
+
+    </div>
+</div>
+
+====================================================
+Date: 10/12/2025
+day-06 attribute ngclass and ngstyle
+====================================================
 
 
 

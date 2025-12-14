@@ -15,7 +15,7 @@ export class NgIfEx {
   isActive: boolean = false;
   details: string = '';
   selectedCategory: string = '';
-  enteredMarks: string = '';
+  //enteredMarks: string = '';
 
   showDiv1() {
     this.isDiv1Visible = true;
