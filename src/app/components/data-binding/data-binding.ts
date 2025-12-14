@@ -1,7 +1,9 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-data-binding',
-  imports: [],
+  imports: [FormsModule, JsonPipe],
   templateUrl: './data-binding.html',
   styleUrl: './data-binding.css',
 })
@@ -12,8 +14,20 @@ export class DataBinding {
   productName = 'Mobile Moto';
   myPlaceholderText = 'Enter Price';
   inputType = 'date';
-  dangerclassName = 'bg-danger';
+  dangerClassName = 'bg-danger';
   courseName: string = 'Java';
+
+  //eventbinding
+  isActive: boolean = false;
+  selectState: string = 'pun';
+  selectGender: string = '';
+  studentObj: any = {
+    studName: 'suraj',
+    mobile: '8792736432',
+    email: 'pawarsuraj614@gmail.com',
+  };
+  cityList: string[] = ['Pune', 'Nagpur', 'Mumbai', 'Chennai'];
+  address: string = '';
   constructor() {
     const player = 'Sachine';
     console.log(this.courseDuration);

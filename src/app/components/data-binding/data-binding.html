@@ -3,24 +3,32 @@
         Course => <span>{{ course }}</span>
     </div>
 
-    <div class="col-3">
+    <div class="col-2">
         {{ courseDuration }}
     </div>
 
-    <div class="col-3">
+    <div class="col-2">
         <h1>{{ startDate }}</h1>
     </div>
 
-    <div class="col-3">
-        <label for="courseDuration">Course Duration</label>
-        <input id="courseDuration" type="text" [value]="courseDuration">
+    <div class="col-2">
+        <label for="course">With Interpolation</label>
+        <input type="text" class="form-control" name="course" id="course"
+            value="{{course}}" />
+    </div>
+    <div class="col-2">
+        <label for="course">With ngModel</label>
+        <input type="text" class="form-control" [(ngModel)]="course"
+            id="course" />
     </div>
 </div>
-
+<br>
+<hr>
 <div class="row mt-3">
     <div class="col-3">
+        <label for="course">With Property Binding</label>
         <input type="text" placeholder="Enter product name" minlength="3"
-            [value]="productName">
+            [value]="productName" />
     </div>
 
     <div class="col-3">
@@ -33,7 +41,7 @@
         <input id="dynamicInput" [type]="inputType">
     </div>
 
-    <div [class]="dangerClassName ">
+    <div [class]="dangerClassName">
         <label for="textInput">Enter Text</label>
         <input id="textInput" type="text">
     </div>
@@ -66,5 +74,85 @@
             (click)="setCourseName('Python')">Python</button>
         <button class="btn btn-success" (click)="setCourseName('NodeJS')">Dot
             Net</button>
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" id="checkbox"
+            name="checkbox" placeholder="checkboxs"> --{{isActive}}
+    </div>
+    <div class="col-3">
+        <label for="address">Select City</label>
+        <select [(ngModel)]="selectState" id="address" class="form-control">
+            <option value>-- Select State --</option>
+            <option value="pun">Pune</option>
+            <option value="goa">Goa</option>
+            <option value="del">Delhi</option>
+            <option value="guj">Gujarat</option>
+        </select> --Selected State: {{ selectState }}
+    </div>
+    <div class="col-2">
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" id="gender">Male
+        <input type="radio" name="gender" id="gender">Female
+    </div>
+    <div class="col-2">--{{selectGender}}
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender"
+            [(ngModel)]="selectGender" value="male" placeholder="gender">Male
+        <input type="radio" name="gender"
+            [(ngModel)]="selectGender" value="female"
+            placeholder="gender">Female
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="studentObj.studName"
+            name="studName"
+            placeholder="Student Name" />
+    </div>
+
+    <div class="col-3">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="studentObj.mobile"
+            name="mobile"
+            placeholder="Mobile Number" />
+    </div>
+
+    <div class="col-3">
+        <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="studentObj.email"
+            name="email"
+            placeholder="Email" />
+    </div>
+    <div class="col-3">
+        {{ studentObj | json }}
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="cityList[0]" name="city" id="mycity"
+            placeholder="entercity">
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="cityList[1]" name="city" id="city"
+            placeholder="enter city">
+    </div>--{{cityList}}
+    <div class="col-3">
+        <textarea [(ngModel)]="address" name="address" id="address"
+            placeholder="address" rows="5"></textarea> --{{address}}
     </div>
 </div>

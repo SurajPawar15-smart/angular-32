@@ -45,6 +45,22 @@ Date: 03/12/2025 Interview question
 https://us06web.zoom.us/rec/share/1Jhf3PVlg9WrtyuXYLjojMgHcVVB_30apI6hsq0FKdOi-az9e7D9yUUQGjN98qN6.RwYeofFAmGxryPMW 
 Passcode: PX5X&R*N
 
+Date: 04/12/2025 Interview question
+https://us06web.zoom.us/rec/share/k1yKGxZEgsAqsHSIiTXC0bIhNJ0xwgsUJMW00uhpmDnyozmRtRnOEPmWzJNh3Hus.bxteMTPGHek8q4xk 
+Passcode: !V7Zpe=c
+
+Date: 05/12/2025 Interview questions
+https://us06web.zoom.us/rec/share/HRfdzA1jSjkN4mT6TI9AvGhRui6N1hFo9Ejt1EWZvcH1EB2WrrgxVnmMVdk8XFs.8nYM2Kum3rQdYN0b 
+Passcode: *bE=10Z4
+
+Date: 08/12/2025 interview
+https://us06web.zoom.us/rec/share/w9PbFJI8VaPc1XkAZmST1Qc1xCjBr2IJogCFBS5tUxTqdOuHf2fajya4-KI_KFHl.QKu0A7eCq32rSrwE 
+Passcode: 3Y9yAb$^
+
+Date: 09/12/2025 interview
+https://us06web.zoom.us/rec/share/XYtVyb_BiRtS9EMTMjJlAwuuvwUikk2gzsSasAHXLsr9yiILYQCzIJqhaRxFZAv_.rY9xC4a4BElSXQWg 
+Passcode: @0+S1^v#
+
 ==========================================
 Angular Batch-32
 ==========================================
@@ -52,23 +68,60 @@ Date: 03/12/2025 Angular Structure
 https://us06web.zoom.us/rec/share/zBcbnjoVJKpxF50MoH0wPR-ZyV5_VVgvPfyQQUki_DDW9Ngi6qXvcLPieJMzwl__.f8Qsk4EUsU_8lrTX 
 Passcode: #Br$f88h
 
-Date: 4/12/2025 DataTypes
+Date: 04/12/2025 DataTypes
 https://us06web.zoom.us/rec/share/6UKhhI1S9F01ytnWYKH0BYq0EwugYLWxJT18zfuvODTwAcRnHAjqYLDVg4MA3C4.iZKMShVgPDjIZFKW 
 Passcode: A&Gp5NFM
 
-Date: 4/12/2025 Interview question
-https://us06web.zoom.us/rec/share/k1yKGxZEgsAqsHSIiTXC0bIhNJ0xwgsUJMW00uhpmDnyozmRtRnOEPmWzJNh3Hus.bxteMTPGHek8q4xk 
-Passcode: !V7Zpe=c
-
-Date: 5/12/2025 DataBinding
+Date: 5/12/2025 DataBinding property + interpollation
 https://us06web.zoom.us/rec/share/vm0efItJWBkUKDZaQwHmm3k3Ey5zp1E-VZNi6xSSUWLMbyXqRRH4xrTp_YDON5wm.HcCVfTHfGsq3AK5v 
 Passcode: &Bp?b4UF
 
-Date: 5/12/2025 Interview questions
-https://us06web.zoom.us/rec/share/HRfdzA1jSjkN4mT6TI9AvGhRui6N1hFo9Ejt1EWZvcH1EB2WrrgxVnmMVdk8XFs.8nYM2Kum3rQdYN0b 
-Passcode: *bE=10Z4
+Date: 6/12/2025 DataBinding ngModel
+https://us06web.zoom.us/rec/share/BOoLq6JQI5totpjBElZjVWd4qjhoblemVG9_E7EVkEQwnl3fl17x6wuvf0niM0-U.On06NzRoWE5JzQAY 
+Passcode: .R.T3xv$
+
+Date: 8/12/2025 ngIf-example
+https://us06web.zoom.us/rec/share/zHnuKszMQUWWY_ph7oxpn12dwz4nDXq3wY4isBwk7PadGa1lk-4bqRSmYvvoOjuV.XdqsW3I6fDcKXSF- 
+Passcode: jz2#0NQ^
+
+Date: 9/12/2025 ng-for-ex
+https://us06web.zoom.us/rec/share/qq0s_0qwR0FTNMQB83MuIGLKgI8QL8GDTb2_kfJwcEJNWbz61zvzyfjFDn9YaeQ.fOt3X8TlvoS4MMPb 
+Passcode: L7S4%uI3
+
+Date: 10/12/2025 ng-for-ex 
+https://us06web.zoom.us/rec/share/TI0D3vzdjiF0X-oqJuxnNJLU7YwuZjCDdgJmh52PoZPC_budO3qsnBk7HjlqzXnz.xBo_2SlQAswz9QkQ 
+Passcode: ix.s47UK
+
+Date: 11/12/2025 
+https://us06web.zoom.us/rec/share/t2jBMUjLecbGuJjSDZyFZnDsxTiFnyVdnnjtZmQOkskogFlmwNIS1W4VuqsTFUfa.FVP6BwWXp2-FXxLA 
+Passcode: FC9Mi$33
+
+Date: 12/12/2025 Routing
+https://us06web.zoom.us/rec/share/FR1NovhrulR6neJ_21YYFTFWKGcJxjM-APCrJoR1wuZmTjJX_CjWC9h4NeSZmOyL.nWmv5MRrRSHvttxw 
+Passcode: 6vCF@wG%
+
+https://us06web.zoom.us/rec/share/6V7xJJA2J1XyWiN3q1_gJYgFWKwbmt3cntvilAGzkbar5BQl3eqUjiEtG3xyt_8L.zMruJJ32WAECweYQ 
+Passcode: ray7yZ=N
+
+Change Detection
+https://us06web.zoom.us/rec/share/e_0y1_MQz3VdYy7NJaOQ83Akg165xVEFWQI1l8vl2gn8Z8F9JZCzlRZVP3Aq6c6d.SN4m6Ul9sZnO-d2A 
+Passcode: Iiq4%^ct
+Authintication  +  Authorization + Dynamioc Menu + Dynami From
+
 
 ==========================================
+
+https://grow.google/ai-essentials/
+https://grow.google/intl/en_in/ai-skills/
+https://www.skills.google/paths/2336
+https://ai.google/learn-ai-skills/
+https://rsvp.withgoogle.com/events/google-ai-agents-intensive_2025/home
+https://cloud.google.com/learn/training/machinelearning-ai
+https://developers.google.com/machine-learning/crash-course
+https://www.skills.google/course_templates/536
+
+==========================================
+Date:03/12/2025
 Angular-Batch-Notes
 ==========================================
 PS F:\Angular\angular-32\src\app\components> ng g c admin
@@ -126,6 +179,7 @@ app.css
 
 
 ====================================================
+Date:04/12/2025
 day-02 DataTypes
 ====================================================
 ng g c dataTypes
@@ -246,15 +300,20 @@ export class DataTypes {
 }
 
 ====================================================
+Date:05/12/2025
 day-03 DataBinding
 ====================================================
 ng g c databinding
 npm install bootstrap
 
 angular.json
- "styles": ["./node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]
+"styles": [
+"./node_modules/bootstrap/dist/css/bootstrap.min.css", 
+"src/styles.css"
+]
 
-ng g --port 4203
+//if want to change the port
+ng s --port 4203
 
 data-binding.ts
 import { Component } from '@angular/core';
@@ -339,6 +398,7 @@ data-binding.html
         <input id="textInput" type="text">
     </div>
 </div>
+
 <div class="row">
     <div class="col-3">
         <button class="btn btn-success" (click)="showWelcome()">Show</button>
@@ -370,7 +430,10 @@ data-binding.html
     </div>
 </div>
 
-
+====================================================
+Date:06/12/2025
+day-04 DataBinding
+====================================================
 
 
 
