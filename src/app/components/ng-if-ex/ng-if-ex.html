@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-3">
+        {{ isDiv1Visible }}
+        <!-- <div *ngIf="isDiv1Visible === true" class="bg-danger p-4">
+            Div 1
+        </div> -->
+        @if(isDiv1Visible){
+        <div class="bg-danger p-4">
+            Div 1
+        </div>
+        }
+    </div>
+    <div class="col-3">
+        <div *ngIf="num1==num2 " class="bg-primary p-4">
+            Div 2
+        </div>--{{num1}}-{{num2}}
+    </div>
+    <div class="col-3">
+        <div *ngIf="true" class="bg-danger p-4">
+            Div 3
+        </div>
+    </div>
+    <div *ngIf="isActive" class="bg-warning p-4">
+        Div 4
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3 text-center">
+        <button class="btn btn-success me-2" (click)="showDiv1()">Show</button>
+        <button class="btn btn-danger me-2" (click)="hideDiv1()">Hide</button>
+        <br /><br />
+        <button class="btn btn-primary" (click)="toggleDiv1()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <input
+            type="number"
+            [(ngModel)]="num1"
+            name="num1"
+            id="num1"
+            placeholder="num1"
+            class="form-control mb-2" />
+        <input
+            type="number"
+            [(ngModel)]="num2"
+            name="num2"
+            id="num2"
+            placeholder="num2"
+            class="form-control" />
+    </div>
+    <div class="col-3">
+        --{{isActive}}
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" name id
+            placeholder="checkbox">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-4">
+        <textarea [(ngModel)]="details" placeholder="enter details"
+            rows="3"></textarea>
+        <!--
+        <span *ngIf="details.length>=20" class="text-danger">Max 20 char
+            Allowed</span>
+        <span *ngIf="details.length < 20" class="text-success">Input is Invalid
+            Allowed</span>
+        --{{details.length}} -->
+        @if(details.length >= 20){
+        <span class="text-danger">Max 20 char
+            Allowed</span>
+        }@else{
+        <span class="text-success">Input is Invalid
+            Allowed</span>
+        }
+    </div>
+
+    <div class="col-3">
+        <label for="category">Category</label>
+        <select
+            id="category"
+            name="category"
+            class="form-select"
+            [(ngModel)]="selectedCategory">
+            <option value>-- Select --</option>
+            <option value="open">Open</option>
+            <option value="st">ST</option>
+            <option value="sc">SC</option>
+            <option value="obc">OBC</option>
+            <option value="general">General</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-3" *ngIf="selectedCategory =='other'">
+        <label for="other">Other</label>
+        <input type="text" class="form-control" placeholder="other caste"
+            id="other">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input
+            type="text"
+            [(ngModel)]="enteredMarks"
+            name="marks"
+            id="marks"
+            min="0"
+            max="100"
+            placeholder="Enter marks out of 100"
+            class="form-control" />
+    </div>
+
+    <div class="col-3">
+        @if (enteredMarks === null) {
+        <span class="text-muted">Please enter marks</span>
+        }
+        @else if (enteredMarks > 35) {
+        <span class="text-danger">Student Failed</span>
+        }
+        @else if (enteredMarks > 50) {
+        <span class="text-secondary">Student has C Grade</span>
+        }
+        @else if (enteredMarks > 65) {
+        <span class="text-success">Student has B Grade</span>
+        }
+        @else if (enteredMarks > 80) {
+        <span class="text-primary">Student has A Grade</span>
+        }
+        @else if (enteredMarks >= 95) {
+        <span class="text-warning">Student has A+ Grade</span>
+        }
+        @else {
+        <span class="text-danger">Invalid marks</span>
+        }
+    </div>
+</div>

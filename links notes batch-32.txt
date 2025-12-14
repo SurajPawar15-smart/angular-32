@@ -106,7 +106,7 @@ Passcode: ray7yZ=N
 Change Detection
 https://us06web.zoom.us/rec/share/e_0y1_MQz3VdYy7NJaOQ83Akg165xVEFWQI1l8vl2gn8Z8F9JZCzlRZVP3Aq6c6d.SN4m6Ul9sZnO-d2A 
 Passcode: Iiq4%^ct
-Authintication  +  Authorization + Dynamioc Menu + Dynami From
+Authentication  +  Authorization + Dynamioc Menu + Dynami From
 
 
 ==========================================
@@ -434,10 +434,516 @@ data-binding.html
 Date:06/12/2025
 day-04 DataBinding
 ====================================================
+<div class="row">
+    <div class="col-3">
+        Course => <span>{{ course }}</span>
+    </div>
+
+    <div class="col-2">
+        {{ courseDuration }}
+    </div>
+
+    <div class="col-2">
+        <h1>{{ startDate }}</h1>
+    </div>
+
+    <div class="col-2">
+        <label for="course">With Interpolation</label>
+        <input type="text" class="form-control" name="course" id="course"
+            value="{{course}}" />
+    </div>
+    <div class="col-2">
+        <label for="course">With ngModel</label>
+        <input type="text" class="form-control" [(ngModel)]="course"
+            id="course" />
+    </div>
+</div>
+<br>
+<hr>
+<div class="row mt-3">
+    <div class="col-3">
+        <label for="course">With Property Binding</label>
+        <input type="text" placeholder="Enter product name" minlength="3"
+            [value]="productName" />
+    </div>
+
+    <div class="col-3">
+        <label for="priceInput">Price</label>
+        <input id="priceInput" type="text" [placeholder]="myPlaceholderText">
+    </div>
+
+    <div class="col-3">
+        <label for="dynamicInput">Select Option</label>
+        <input id="dynamicInput" [type]="inputType">
+    </div>
+
+    <div [class]="dangerClassName">
+        <label for="textInput">Enter Text</label>
+        <input id="textInput" type="text">
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcome()">Show</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="changeCourse()">Change
+            Course</button>
+    </div>
+    <div class="col-3">
+        <label for="techSelect">Select Technology</label>
+        <select id="techSelect" (change)="onCitychange()">
+            <option value="html5">HTML5</option>
+            <option value="css3">CSS3</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="setCourseName('Dot Net')">Dot
+            Net</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Java')">Java</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Php')">Php</button>
+        <button class="btn btn-success"
+            (click)="setCourseName('Python')">Python</button>
+        <button class="btn btn-success" (click)="setCourseName('NodeJS')">Dot
+            Net</button>
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" id="checkbox"
+            name="checkbox" placeholder="checkboxs"> --{{isActive}}
+    </div>
+    <div class="col-3">
+        <label for="address">Select City</label>
+        <select [(ngModel)]="selectState" id="address" class="form-control">
+            <option value>-- Select State --</option>
+            <option value="pun">Pune</option>
+            <option value="goa">Goa</option>
+            <option value="del">Delhi</option>
+            <option value="guj">Gujarat</option>
+        </select> --Selected State: {{ selectState }}
+    </div>
+    <div class="col-2">
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" id="gender">Male
+        <input type="radio" name="gender" id="gender">Female
+    </div>
+    <div class="col-2">--{{selectGender}}
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender"
+            [(ngModel)]="selectGender" value="male" placeholder="gender">Male
+        <input type="radio" name="gender"
+            [(ngModel)]="selectGender" value="female"
+            placeholder="gender">Female
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="studentObj.studName"
+            name="studName"
+            placeholder="Student Name" />
+    </div>
+
+    <div class="col-3">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="studentObj.mobile"
+            name="mobile"
+            placeholder="Mobile Number" />
+    </div>
+
+    <div class="col-3">
+        <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="studentObj.email"
+            name="email"
+            placeholder="Email" />
+    </div>
+    <div class="col-3">
+        {{ studentObj | json }}
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="cityList[0]" name="city" id="mycity"
+            placeholder="entercity">
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="cityList[1]" name="city" id="city"
+            placeholder="enter city">
+    </div>--{{cityList}}
+    <div class="col-3">
+        <textarea [(ngModel)]="address" name="address" id="address"
+            placeholder="address" rows="5"></textarea> --{{address}}
+    </div>
+</div>
 
 
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+@Component({
+  selector: 'app-data-binding',
+  imports: [FormsModule, JsonPipe],
+  templateUrl: './data-binding.html',
+  styleUrl: './data-binding.css',
+})
+export class DataBinding {
+  course = 'angular';
+  courseDuration = '3 Months';
+  startDate = '21 Dec 2025';
+  productName = 'Mobile Moto';
+  myPlaceholderText = 'Enter Price';
+  inputType = 'date';
+  dangerClassName = 'bg-danger';
+  courseName: string = 'Java';
+
+  //eventbinding
+  isActive: boolean = false;
+  selectState: string = 'pun';
+  selectGender: string = '';
+  studentObj: any = {
+    studName: 'suraj',
+    mobile: '8792736432',
+    email: 'pawarsuraj614@gmail.com',
+  };
+  cityList: string[] = ['Pune', 'Nagpur', 'Mumbai', 'Chennai'];
+  address: string = '';
+  constructor() {
+    const player = 'Sachine';
+    console.log(this.courseDuration);
+
+    setTimeout(() => {
+      this.course = 'ReactJS'; // Angular 17/18/19/20 zoneless ready
+      debugger;
+    }, 3000);
+  }
+
+  showWelcome() {
+    alert('welcome b-32');
+    alert('End Alert');
+  }
+  changeCourse() {
+    this.course = 'Dot Net';
+  }
+  onCitychange() {
+    alert('City got changed...!!!');
+  }
+  setCourseName(courseName: any) {
+    this.course = courseName;
+  }
+}
+
+====================================================
+Date: 08/12/2025
+day-05 directive ngif and @if
+====================================================
+<div class="row">
+    <div class="col-3">
+        {{ isDiv1Visible }}
+
+        <div *ngIf="isDiv1Visible === true" class="bg-danger p-4">
+            Div 1
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="num1==num2 " class="bg-primary p-4">
+            Div 2
+        </div>--{{num1}}-{{num2}}
+    </div>
+    <div class="col-3">
+        <div *ngIf="true" class="bg-danger p-4">
+            Div 3
+        </div>
+    </div>
+    <div *ngIf="isActive" class="bg-warning p-4">
+        Div 4
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3 text-center">
+        <button class="btn btn-success me-2" (click)="showDiv1()">Show</button>
+        <button class="btn btn-danger me-2" (click)="hideDiv1()">Hide</button>
+        <br /><br />
+        <button class="btn btn-primary" (click)="toggleDiv1()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <input
+            type="number"
+            [(ngModel)]="num1"
+            name="num1"
+            id="num1"
+            placeholder="num1"
+            class="form-control mb-2" />
+        <input
+            type="number"
+            [(ngModel)]="num2"
+            name="num2"
+            id="num2"
+            placeholder="num2"
+            class="form-control" />
+    </div>
+    <div class="col-3">
+        --{{isActive}}
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" name id
+            placeholder="checkbox">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-4">
+        <textarea [(ngModel)]="details" placeholder="enter details"
+            rows="3"></textarea>
+        <span *ngIf="details.length>=20" class="text-danger">Max 20 char
+            Allowed</span>
+        --{{details.length}}
+    </div>
+    <div class="col-3">
+        <label for="category">Category</label>
+        <select
+            id="category"
+            name="category"
+            class="form-select"
+            [(ngModel)]="selectedCategory">
+            <option value>-- Select --</option>
+            <option value="open">Open</option>
+            <option value="st">ST</option>
+            <option value="sc">SC</option>
+            <option value="obc">OBC</option>
+            <option value="general">General</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-3" *ngIf="selectedCategory =='other'">
+        <label for="other">Other</label>
+        <input type="text" class="form-control" placeholder="other caste"
+            id="other">
+    </div>
+</div>
 
 
+import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-ng-if-ex',
+  imports: [NgIf, FormsModule],
+  templateUrl: './ng-if-ex.html',
+  styleUrl: './ng-if-ex.css',
+})
+export class NgIfEx {
+  isDiv1Visible: boolean = false;
+  num1: string = '';
+  num2: string = '';
+  isActive: boolean = false;
+  details: string = '';
+  selectedCategory: string = '';
+  showDiv1() {
+    this.isDiv1Visible = true;
+  }
+  hideDiv1() {
+    this.isDiv1Visible = false;
+  }
+  toggleDiv1() {
+    this.isDiv1Visible = !this.isDiv1Visible;
+  }
+}
+
+=================@if========================
+
+<div class="row">
+    <div class="col-3">
+        {{ isDiv1Visible }}
+        <!-- <div *ngIf="isDiv1Visible === true" class="bg-danger p-4">
+            Div 1
+        </div> -->
+        @if(isDiv1Visible){
+        <div class="bg-danger p-4">
+            Div 1
+        </div>
+        }
+    </div>
+    <div class="col-3">
+        <div *ngIf="num1==num2 " class="bg-primary p-4">
+            Div 2
+        </div>--{{num1}}-{{num2}}
+    </div>
+    <div class="col-3">
+        <div *ngIf="true" class="bg-danger p-4">
+            Div 3
+        </div>
+    </div>
+    <div *ngIf="isActive" class="bg-warning p-4">
+        Div 4
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3 text-center">
+        <button class="btn btn-success me-2" (click)="showDiv1()">Show</button>
+        <button class="btn btn-danger me-2" (click)="hideDiv1()">Hide</button>
+        <br /><br />
+        <button class="btn btn-primary" (click)="toggleDiv1()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <input
+            type="number"
+            [(ngModel)]="num1"
+            name="num1"
+            id="num1"
+            placeholder="num1"
+            class="form-control mb-2" />
+        <input
+            type="number"
+            [(ngModel)]="num2"
+            name="num2"
+            id="num2"
+            placeholder="num2"
+            class="form-control" />
+    </div>
+    <div class="col-3">
+        --{{isActive}}
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" name id
+            placeholder="checkbox">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-4">
+        <textarea [(ngModel)]="details" placeholder="enter details"
+            rows="3"></textarea>
+        <!--
+        <span *ngIf="details.length>=20" class="text-danger">Max 20 char
+            Allowed</span>
+        <span *ngIf="details.length < 20" class="text-success">Input is Invalid
+            Allowed</span>
+        --{{details.length}} -->
+        @if(details.length >= 20){
+        <span class="text-danger">Max 20 char
+            Allowed</span>
+        }@else{
+        <span class="text-success">Input is Invalid
+            Allowed</span>
+        }
+    </div>
+
+    <div class="col-3">
+        <label for="category">Category</label>
+        <select
+            id="category"
+            name="category"
+            class="form-select"
+            [(ngModel)]="selectedCategory">
+            <option value>-- Select --</option>
+            <option value="open">Open</option>
+            <option value="st">ST</option>
+            <option value="sc">SC</option>
+            <option value="obc">OBC</option>
+            <option value="general">General</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-3" *ngIf="selectedCategory =='other'">
+        <label for="other">Other</label>
+        <input type="text" class="form-control" placeholder="other caste"
+            id="other">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input
+            type="text"
+            [(ngModel)]="enteredMarks"
+            name="marks"
+            id="marks"
+            min="0"
+            max="100"
+            placeholder="Enter marks out of 100"
+            class="form-control" />
+    </div>
+
+    <div class="col-3">
+        @if (enteredMarks === null) {
+        <span class="text-muted">Please enter marks</span>
+        }
+        @else if (enteredMarks > 35) {
+        <span class="text-danger">Student Failed</span>
+        }
+        @else if (enteredMarks > 50) {
+        <span class="text-secondary">Student has C Grade</span>
+        }
+        @else if (enteredMarks > 65) {
+        <span class="text-success">Student has B Grade</span>
+        }
+        @else if (enteredMarks > 80) {
+        <span class="text-primary">Student has A Grade</span>
+        }
+        @else if (enteredMarks >= 95) {
+        <span class="text-warning">Student has A+ Grade</span>
+        }
+        @else {
+        <span class="text-danger">Invalid marks</span>
+        }
+    </div>
+</div>
+
+import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-ng-if-ex',
+  imports: [NgIf, FormsModule],
+  templateUrl: './ng-if-ex.html',
+  styleUrl: './ng-if-ex.css',
+})
+export class NgIfEx {
+  isDiv1Visible: boolean = false;
+  num1: string = '';
+  num2: string = '';
+  isActive: boolean = false;
+  details: string = '';
+  selectedCategory: string = '';
+  enteredMarks: string = '';
+
+  showDiv1() {
+    this.isDiv1Visible = true;
+  }
+  hideDiv1() {
+    this.isDiv1Visible = false;
+  }
+  toggleDiv1() {
+    this.isDiv1Visible = !this.isDiv1Visible;
+  }
+}
+
+====================================================
+Date: 09/12/2025
+day-05 directive *ngFor and @for
+====================================================
+ng g c ngForEx
 
 
 

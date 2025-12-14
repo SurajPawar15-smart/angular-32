@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 // import { User } from './components/user/user';
 //import { DataTypes } from './components/data-types/data-types';
 import { DataBinding } from './components/data-binding/data-binding';
+import { NgIfEx } from './components/ng-if-ex/ng-if-ex';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DataBinding],
+  imports: [RouterOutlet, NgIfEx],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
