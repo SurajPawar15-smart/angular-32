@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-3" [ngClass]="div1BackColor">
+        Div 1
+    </div>
+    <div class="col-3">
+        <div class="p-3"
+            [ngClass]="isActive ==true ?'bg-success text-white':'bg-danger text-black'">
+            Div 2 --{{isActive}}
+        </div>
+    </div>
+    <div class="col-3" [ngClass]="divClassName">
+        div 3
+    </div>
+    <div class="col-3">
+
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-3">
+        div 12
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" name placeholder="checkd
+        ">
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="divClassName" placeholder="class name"
+            name id>
+    </div>
+    <div [class]="'p-3 '+div1BackColor" class="col-3">
+        div 11
+    </div>
+</div>
+<hr>
+<br>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Grade</th>
+            <th>City</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (item of studentList; track $index) {
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.surname }}</td>
+            <td
+                [ngClass]="{
+            'bg-success': item.grade === 'A',
+            'bg-warning': item.grade === 'B',
+            'bg-primary':item.grade==='C',
+            'bg-secondary':item.grade==='D',
+            'bg-danger': item.grade === 'E'
+          }">
+                {{ item.grade }}
+            </td>
+            <td>{{ item.city }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="colorName" placeholder="colorname">
+    </div>
+    <div class="col-3">
+        <div class="p-3" [ngStyle]="{color:colorName,'font-size':'32px'}">
+            <span>This is Sample Text</span>
+        </div>
+    </div>
+    <div class="col-3" [ngStyle]="myCss" style="color:white;font-weight:200;">
+        Div 22
+    </div>
+    <div class="col-3">Div 33</div>
+</div>
