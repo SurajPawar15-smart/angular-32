@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-warning">
+        Vendor Master
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Vendor Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(vendor of vendorList();track $index){
+            <tr>
+              <td>{{ $index+1 }}</td>
+              <td>{{ vendor.vendorName }}</td>
+              <td>{{ vendor.contactNo }}</td>
+              <td>{{ vendor.emailId }}</td>
+              <td></td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-warning">
+        Add New Vendor
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <label for="vendorName">Name</label>
+            <input type="text" [(ngModel)]="newVendorObj.vendorName"
+              id="vendorName"
+              name="vendorName"
+              class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="contactNo">ContactNo</label>
+            <input type="text" [(ngModel)]="newVendorObj.contactNo"
+              id="contactNo"
+              name="contactNo" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="emailId">EmailId</label>
+            <input type="text" [(ngModel)]="newVendorObj.emailId" id="emailId"
+              name="emailId"
+              class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <button class="btn btn-secondary m-2 p-2">Reset</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary m-2 p-2"
+              (click)="saveNewVendor()">Save Vendor</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
