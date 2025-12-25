@@ -61,6 +61,33 @@ Date: 09/12/2025 interview
 https://us06web.zoom.us/rec/share/XYtVyb_BiRtS9EMTMjJlAwuuvwUikk2gzsSasAHXLsr9yiILYQCzIJqhaRxFZAv_.rY9xC4a4BElSXQWg 
 Passcode: @0+S1^v#
 
+Date: 11/12/2025
+https://us06web.zoom.us/rec/share/6V7xJJA2J1XyWiN3q1_gJYgFWKwbmt3cntvilAGzkbar5BQl3eqUjiEtG3xyt_8L.zMruJJ32WAECweYQ 
+Passcode: ray7yZ=N
+
+Date: 13/12/2025
+https://us06web.zoom.us/rec/share/e_0y1_MQz3VdYy7NJaOQ83Akg165xVEFWQI1l8vl2gn8Z8F9JZCzlRZVP3Aq6c6d.SN4m6Ul9sZnO-d2A 
+Passcode: Iiq4%^ct
+
+Date: 15/12/2025
+https://us06web.zoom.us/rec/share/jw3Zb2zHYg9GD40Kmz4SObY7YUseuE53ZF0uVp49lqcGOTj8W1TEl5RN3VlODXT3.Ov3QNc3m2Umo7PRI 
+Passcode: K7=En@Q0
+
+Date:22/12/2025
+https://us06web.zoom.us/rec/share/6c2BLk9vuPsheX_ik3_yEB4ovbUy2OCf2s239zW16KLyqfxbVXJRsI22xdA3q2f9.jnG8U3lTN-yEJmkv 
+Passcode: rG^1y=6$
+
+Date: 24/12/2025
+https://us06web.zoom.us/rec/share/M-cCeV8WGRI8BpUTHN1STKZZPJ55lEyn_LAnMEKlA16ZqqvWPrk799qBcReqzwIV.QTRn0DK4QQ-s6nwq 
+Passcode: R6&qiY&C
+
+==========================================
+Angular Batch-32 Project
+==========================================
+Date: 25/12/2025 Day-01
+https://us06web.zoom.us/rec/share/eS4CvVeyIRlRm_plHwSuagWW0WaUm856_mHP4-0u1hB2iaxBDXEMh8GYynrXK8e-.ETL4cgd1myAvFtJb 
+Passcode: jU!.*m15
+
 ==========================================
 Angular Batch-32
 ==========================================
@@ -108,6 +135,33 @@ https://us06web.zoom.us/rec/share/e_0y1_MQz3VdYy7NJaOQ83Akg165xVEFWQI1l8vl2gn8Z8
 Passcode: Iiq4%^ct
 Authentication  +  Authorization + Dynamioc Menu + Dynami From
 
+Date: 15/12/2025 Get+Post
+https://us06web.zoom.us/rec/share/fdgkD5zKreUWuMuewaUQ0aAjf2uC2LgP71XJZUlX5g8gfvUlkI1no0ignnmPiezJ.V4zfBbhS47pDzoli 
+Passcode: b%trq&72
+
+Date: 16/12/2025
+https://us06web.zoom.us/rec/share/J3lenfM07LVi8MOB7Okn977OcPfvKbRnXoOqA4zkhGw1D-2OJoaK2cGAg0SZDMxv.sKbtK_t8_emKuldl 
+Passcode: G?@D9v^3
+
+Date: 17/12/2025
+https://us06web.zoom.us/rec/share/ashp50C_2OBIZ-lN4jP-JWU005yZRA3Qp-9TnWzxX6tafiOqZgIuKFDEbXHiDtr3.V58N4TEK_D1C_BCy 
+Passcode: $8f@x#R9
+
+Date: 18/12/2025
+https://us06web.zoom.us/rec/share/c0i3GiQf-z6jMWH4fbNzdpVyZZxsumud2Bp7o_aiu78QYzSFJzCzF42QBaAA62Go.9cYggfiIKkh9_2s_ 
+Passcode: zca$=tH0
+
+Date: 22/12/2025
+https://us06web.zoom.us/rec/share/1CRistZ70OxaDhOdnBYvRWtLXpUuiNsoJH6wtfUDfpU9jhdZkv2hm_dwUdEALwY.2kREo6339qceS9vr 
+Passcode: &w77L=73
+
+Date: 23/12/2025
+https://us06web.zoom.us/rec/share/9qnO11_YyEkgHQjV3VfHBSU5IhmB6Zx7UszwcKynNbDGu32DeqKgdGzNJjSE_Wqs.fzt-SRwSBYuKQTf8 
+Passcode: X@n+Z4iV
+
+Date: 24/12/2025
+https://us06web.zoom.us/rec/share/1xOnbYGU4DUQwBZWDnz9TAl_Pkfjep7YZlxg9W8M4R7WO9YkgFblEV6HKqZYh42S.E86yn6pb7QieINln 
+Passcode: eCYn0+Yn
 
 ==========================================
 
@@ -1252,12 +1306,6 @@ export class App {
 }
 
 
-
-
-
-
-
-
 import { Component, signal } from '@angular/core';
 
 @Component({
@@ -1314,29 +1362,161 @@ export class BasicSignal {
     </div>
 </div>
 
+====================================================
+Date: 12/12/2025
+day-09 getAPIEx
+====================================================
+ng g c getAPIEx
+
+get-apiex.ts
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-get-apiex',
+  imports: [],
+  templateUrl: './get-apiex.html',
+  styleUrl: './get-apiex.css',
+})
+export class GetAPIEx {
+  //photosList: any[] = [];
+
+  //HttpClient
+  //http2 = inject(HttpClient); //angular 16
+  photosList = signal<any[]>([]);
+  userDataList = signal<any[]>([]);
+
+  userList = ['suraj', 'ram', 'rahul', 'radha'];
+
+  constructor(private http: HttpClient) {}
+  getPhotosData() {
+    this.http.get('https://jsonplaceholder.typicode.com/photos').subscribe((data: any) => {
+      debugger;
+      //this.photosList = data;
+      this.photosList.set(data);
+    });
+  }
+
+  getUserData() {
+    this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((result: any) => {
+      this.userDataList.set(result);
+    });
+  }
+}
+
+get-apiex.html
+<p>get-apiex works!</p>
+<button (click)="getPhotosData()">Get Photos</button>
+<button (click)="getUserData()">Get User</button>
+<div class="row">
+  <div class="col-4">
+    <ul>
+      @for(item of photosList();track $index){
+      <li>
+        {{item.id}} | {{item.title}} | {{item.url}}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul>
+      @for(item of userList;track $index){
+      <li>
+        {{item}}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul>
+      @for(item of userDataList();track $index){
+      <li>
+        {{item.name}} |{{item.username}} | {{item.address.city}}
+      </li>
+      }
+    </ul>
+  </div>
+</div>
+
+app.routes.ts
+import { Routes } from '@angular/router';
+import { DataBinding } from './components/data-binding/data-binding';
+import { DataTypes } from './components/data-types/data-types';
+import { NgClassEx } from './components/ng-class-ex/ng-class-ex';
+import { NgForEx } from './components/ng-for-ex/ng-for-ex';
+import { NgIfEx } from './components/ng-if-ex/ng-if-ex';
+import { BasicSignal } from './components/basic-signal/basic-signal';
+import { GetAPIEx } from './components/get-apiex/get-apiex';
+
+export const routes: Routes = [
+  { path: 'databinding', component: DataBinding },
+  { path: 'data-types', component: DataTypes },
+  { path: 'ng-if-ex', component: NgIfEx },
+  { path: 'ng-for-ex', component: NgForEx },
+  { path: 'ng-class-ex', component: NgClassEx },
+  { path: 'app-basic-signal', component: BasicSignal },
+  { path: 'get-api', component: GetAPIEx },
+];
+
+app.html
+ <li class="nav-item">
+        <a class="nav-link" href="get-api">GetApi</a>
+ </li>
+
+====================================================
+Date: 15/12/2025
+day-10 
+====================================================
+https://freeprojectapi.com/api.html
+
+GET => https://api.freeprojectapi.com/api/BusBooking/GetBusVendors
+GET => https://api.freeprojectapi.com/api/SmartParking/GetAllClients
+
+get-apiex.ts
+  vendorList = signal<any[]>([]);
+  clientList = signal<any[]>([]);
+  getBusVendor() {
+    this.http
+      .get('https://api.freeprojectapi.com/api/BusBooking/GetBusVendors')
+      .subscribe((res: any) => {
+        this.vendorList.set(res);
+      });
+  }
+  getAllClients() {
+    this.http.get('https://api.freeprojectapi.com/api/SmartParking/GetAllClients').subscribe({
+      next: (res: any) => {
+        this.clientList.set(res.data);
+      },
+      error: (err: any) => {},
+    });
+  }
+}
+
+get-apiex.html
+<div class="row">
+  <div class="col-4">
+    <ul>
+      @for(item of vendorList();track $index){
+      <li>
+        {{item.id}}|{{item.vendorName}}| {{item.contactNo}}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul>
+      @for(item of clientList();track $index){
+      <li>
+        {{item.clientId}}|{{item.clientName}}| {{item.businessName}}
+      </li>
+      }
+    </ul>
+  </div>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ng g c vendorMaster
 
 
 

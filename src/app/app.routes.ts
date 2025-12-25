@@ -5,6 +5,7 @@ import { NgClassEx } from './components/ng-class-ex/ng-class-ex';
 import { NgForEx } from './components/ng-for-ex/ng-for-ex';
 import { NgIfEx } from './components/ng-if-ex/ng-if-ex';
 import { BasicSignal } from './components/basic-signal/basic-signal';
+import { GetAPIEx } from './components/get-apiex/get-apiex';
 
 export const routes: Routes = [
   { path: 'databinding', component: DataBinding },
@@ -13,4 +14,5 @@ export const routes: Routes = [
   { path: 'ng-for-ex', component: NgForEx },
   { path: 'ng-class-ex', component: NgClassEx },
   { path: 'app-basic-signal', component: BasicSignal },
+  { path: 'get-api', component: GetAPIEx },
 ];
