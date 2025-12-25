@@ -1671,8 +1671,263 @@ app.routes.ts
 
 ====================================================
 Date: 16/12/2025
-day-11 
+day-11 -update,delete
 ====================================================
+
+vendor-master.ts
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, inject, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-vendor-master',
+  imports: [FormsModule],
+  templateUrl: './vendor-master.html',
+  styleUrl: './vendor-master.css',
+})
+export class VendorMaster implements OnInit {
+  http = inject(HttpClient);
+  vendorList = signal<any[]>([]);
+
+  newVendorObj: any = {
+    vendorId: 0,
+    vendorName: '',
+    contactNo: '',
+    emailId: '',
+  };
+
+  ngOnInit(): void {
+    //debugger;
+    this.getAllVendors();
+  }
+
+  getAllVendors() {
+    this.http.get('https://api.freeprojectapi.com/api/BusBooking/GetBusVendors').subscribe({
+      next: (result: any) => {
+        this.vendorList.set(result);
+      },
+      error: (err: any) => {
+        alert('Error fetching vendors');
+      },
+    });
+  }
+
+  saveNewVendor() {
+    this.http
+      .post('https://api.freeprojectapi.com/api/BusBooking/PostBusVendor', this.newVendorObj)
+      .subscribe({
+        next: (result: any) => {
+          //debugger;
+          alert('Vendor added successfully');
+          this.getAllVendors();
+        },
+        error: (error: any) => {
+          //debugger;
+          alert('Error adding vendor');
+        },
+      });
+  }
+  onEdit(data: any) {
+    this.newVendorObj = data;
+  }
+  updateVendor() {
+    this.http
+      .put(
+        'https://api.freeprojectapi.com/api/BusBooking/PutBusVendors?id=' +
+          this.newVendorObj.vendorId,
+        this.newVendorObj
+      )
+      .subscribe({
+        next: (result: any) => {
+          alert('Vendor updated successfully');
+          this.getAllVendors();
+        },
+        error: (error: any) => {
+          alert('Error updating vendor');
+        },
+      });
+  }
+  onDelete(id: any) {
+    const isDelete = confirm('Are you sure to delete this vendor?');
+    if (isDelete) {
+      this.http
+        .delete('https://api.freeprojectapi.com/api/BusBooking/DeleteBusVendor?id=' + id)
+        .subscribe({
+          next: (result: any) => {
+            alert('Vendor deleted successfully');
+          },
+          error: (error: any) => {
+            alert('Error deleting vendor');
+          },
+        });
+    }
+  }
+}
+
+vendor-master.html
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-warning">
+        Vendor Master
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Vendor Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(index of vendorList();track $index){
+            <tr>
+              <td>{{ $index+1 }}</td>
+              <td>{{ index.vendorName }}</td>
+              <td>{{ index.contactNo }}</td>
+              <td>{{ index.emailId }}</td>
+              <td>
+                <button type="button" class="btn btn-success m-1 p-2"
+                  (click)="onEdit(index)">Edit</button>
+                <button type="button"
+                  class="btn btn-danger m-1 p-2"
+                  (click)="onDelete(index.vendorId)">Delete</button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-warning">
+        {{newVendorObj.vendorId === 0 ? " Add New Vendor " :
+        " Update Vendor Master "}}
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-12">
+              <label for="vendorName">Name</label>
+              <input type="text" [(ngModel)]="newVendorObj.vendorName"
+                id="vendorName"
+                name="vendorName"
+                class="form-control">
+            </div>
+            <div class="col-6">
+              <label for="contactNo">ContactNo</label>
+              <input type="text" [(ngModel)]="newVendorObj.contactNo"
+                id="contactNo"
+                name="contactNo" class="form-control">
+            </div>
+            <div class="col-6">
+              <label for="emailId">EmailId</label>
+              <input type="text" [(ngModel)]="newVendorObj.emailId" id="emailId"
+                name="emailId"
+                class="form-control">
+            </div>
+          </div>--{{newVendorObj.vendorId}}
+          <div class="row pt-3">
+            <div class="col-4 text-center">
+              <button type="button"
+                class="btn btn-secondary m-2 p-2">Reset</button>
+            </div>
+            <div class="col-8 text-center">
+              @if(newVendorObj.vendorId==0){
+              <button type="button" class="btn btn-primary m-2 p-2"
+                (click)="saveNewVendor()">Save Vendor</button>
+              }@else{
+              <button type="button" class="btn btn-primary m-2 p-2"
+                (click)="updateVendor()">Update Vendor</button>
+              }
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+BUSBOOKING
+https://api.freeprojectapi.com/api/BusBooking/GetAllUsers
+https://api.freeprojectapi.com/api/BusBooking/AddNewUser
+https://api.freeprojectapi.com/api/BusBooking/UpdateUser
+https://api.freeprojectapi.com/api/BusBooking/DeleteUserByUserId
+{
+  "userId": 0,
+  "userName": "string",
+  "emailId": "string",
+  "fullName": "string",
+  "role": "string",
+  "createdDate": "2025-12-25T05:59:24.882Z",
+  "password": "string",
+  "projectName": "string",
+  "refreshToken": "string",
+  "refreshTokenExpiryTime": "2025-12-25T05:59:24.882Z"
+}
+
+https://api.freeprojectapi.com/api/BusBooking/login
+{
+  "userName": "string",
+  "password": "string"
+}
+
+FEESTRACKING
+https://api.freeprojectapi.com/api/FeesTracking/getAllEnrollments
+https://api.freeprojectapi.com/api/FeesTracking/DeleteById
+https://api.freeprojectapi.com/api/FeesTracking/addNewEnrollment
+https://api.freeprojectapi.com/api/FeesTracking/updateEnrollment
+https://api.freeprojectapi.com/api/FeesTracking/%7Bid%7D
+https://api.freeprojectapi.com/api/FeesTracking/FilterEnrollments
+{
+  "enrollmentId": 0,
+  "studentName": "string",
+  "contactNo": "string",
+  "totalFees": 0,
+  "emi1": 0,
+  "emi2": 0,
+  "emi3": 0,
+  "totalReceived": 0,
+  "status": "string",
+  "isSoftDelete": false,
+  "batchId": 0
+}
+
+https://api.freeprojectapi.com/api/Enquiry/get-enquiries
+https://api.freeprojectapi.com/api/Enquiry/get-enquiry/%7Bid%7D
+https://api.freeprojectapi.com/api/Enquiry/create-enquiry
+https://api.freeprojectapi.com/api/Enquiry/update-enquiry/%7Bid%7D
+https://api.freeprojectapi.com/api/Enquiry/delete-enquiry/%7Bid%7D  
+https://api.freeprojectapi.com/api/Enquiry/get-categories
+{
+  "enquiryId": 0,
+  "customerName": "string",
+  "customerEmail": "string",
+  "customerPhone": "string",
+  "message": "string",
+  "categoryId": 0,
+  "statusId": 0,
+  "enquiryType": "string",
+  "isConverted": false,
+  "enquiryDate": "2025-12-25T08:37:28.749Z",
+  "followUpDate": "2025-12-25T08:37:28.749Z",
+  "feedback": "string"
+}
+
+====================================================
+Date: 17/12/2025
+day-11 -update,delete
+====================================================
+
+
 
 
 

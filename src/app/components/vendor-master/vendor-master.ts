@@ -14,21 +14,20 @@ export class VendorMaster implements OnInit {
 
   newVendorObj: any = {
     vendorId: 0,
-    vendorName: 'string',
-    contactNo: 'string',
-    emailId: 'string',
+    vendorName: '',
+    contactNo: '',
+    emailId: '',
   };
 
   ngOnInit(): void {
     //debugger;
     this.getAllVendors();
-    this.saveNewVendor();
   }
 
   getAllVendors() {
     this.http.get('https://api.freeprojectapi.com/api/BusBooking/GetBusVendors').subscribe({
-      next: (res: any) => {
-        this.vendorList.set(res);
+      next: (result: any) => {
+        this.vendorList.set(result);
       },
       error: (err: any) => {
         alert('Error fetching vendors');
@@ -40,15 +39,50 @@ export class VendorMaster implements OnInit {
     this.http
       .post('https://api.freeprojectapi.com/api/BusBooking/PostBusVendor', this.newVendorObj)
       .subscribe({
-        next: (res: any) => {
+        next: (result: any) => {
           //debugger;
           alert('Vendor added successfully');
           this.getAllVendors();
         },
-        error: (err: any) => {
+        error: (error: any) => {
           //debugger;
           alert('Error adding vendor');
         },
       });
+  }
+  onEdit(data: any) {
+    this.newVendorObj = data;
+  }
+  updateVendor() {
+    this.http
+      .put(
+        'https://api.freeprojectapi.com/api/BusBooking/PutBusVendors?id=' +
+          this.newVendorObj.vendorId,
+        this.newVendorObj
+      )
+      .subscribe({
+        next: (result: any) => {
+          alert('Vendor updated successfully');
+          this.getAllVendors();
+        },
+        error: (error: any) => {
+          alert('Error updating vendor');
+        },
+      });
+  }
+  onDelete(id: any) {
+    const isDelete = confirm('Are you sure to delete this vendor?');
+    if (isDelete) {
+      this.http
+        .delete('https://api.freeprojectapi.com/api/BusBooking/DeleteBusVendor?id=' + id)
+        .subscribe({
+          next: (result: any) => {
+            alert('Vendor deleted successfully');
+          },
+          error: (error: any) => {
+            alert('Error deleting vendor');
+          },
+        });
+    }
   }
 }
